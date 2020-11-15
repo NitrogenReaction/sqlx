@@ -56,17 +56,17 @@ impl_any_decode!(f64);
 impl_any_decode!(&'r str);
 impl_any_decode!(String);
 
-#[cfg(all(feature = "chrono"), not(feature = "mssql"))]
+#[cfg(feature = "chrono")]
 impl_any_type!(chrono::DateTime<chrono::Utc>);
-#[cfg(all(feature = "chrono"), not(feature = "mssql"))]
+#[cfg(feature = "chrono")]
 impl_any_encode!(chrono::DateTime<chrono::Utc>);
-#[cfg(all(feature = "chrono"), not(feature = "mssql"))]
+#[cfg(feature = "chrono")]
 impl_any_decode!(chrono::DateTime<chrono::Utc>);
 
-impl_any_type!([u8]);
-impl_any_encode!([u8]);
-impl_any_decode!([u8]);
+// impl_any_type!([u8]);
+// impl_any_encode!([u8]);
+// impl_any_decode!([u8]);
 
-impl_any_type!([Vec<u8>]);
+impl_any_type!(Vec<u8>);
 impl_any_encode!(Vec<u8>);
 impl_any_decode!(Vec<u8>);
